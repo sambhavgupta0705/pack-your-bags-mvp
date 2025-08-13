@@ -1,0 +1,460 @@
+[
+  {
+    "id": "kedarkantha",
+    "name": "Kedarkantha",
+    "region": "Uttarakhand",
+    "difficulty": "Easy",
+    "altitude": 12500,
+    "duration": 6,
+    "seasons": [
+      "Dec",
+      "Jan",
+      "Feb",
+      "Mar"
+    ],
+    "popularity": 95,
+    "providers": [
+      {
+        "name": "Indiahikes",
+        "price": 10499,
+        "rating": 4.7,
+        "groupSize": 20,
+        "startDates": [
+          "2025-12-10",
+          "2026-01-05"
+        ]
+      },
+      {
+        "name": "Trekker's Hub",
+        "price": 8999,
+        "rating": 4.4,
+        "groupSize": 15,
+        "startDates": [
+          "2025-12-15",
+          "2026-02-02"
+        ]
+      },
+      {
+        "name": "HimalayaX",
+        "price": 9499,
+        "rating": 4.6,
+        "groupSize": 18,
+        "startDates": [
+          "2025-12-22",
+          "2026-03-10"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hampta",
+    "name": "Hampta Pass",
+    "region": "Himachal Pradesh",
+    "difficulty": "Moderate",
+    "altitude": 14100,
+    "duration": 5,
+    "seasons": [
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep"
+    ],
+    "popularity": 90,
+    "providers": [
+      {
+        "name": "Indiahikes",
+        "price": 13499,
+        "rating": 4.8,
+        "groupSize": 22,
+        "startDates": [
+          "2025-06-10",
+          "2025-07-12",
+          "2025-09-05"
+        ]
+      },
+      {
+        "name": "Bikat Adventures",
+        "price": 11999,
+        "rating": 4.5,
+        "groupSize": 18,
+        "startDates": [
+          "2025-06-18",
+          "2025-08-02"
+        ]
+      },
+      {
+        "name": "Moxtain",
+        "price": 11499,
+        "rating": 4.4,
+        "groupSize": 16,
+        "startDates": [
+          "2025-07-05",
+          "2025-08-15"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "buran",
+    "name": "Buran Ghati",
+    "region": "Himachal Pradesh",
+    "difficulty": "Moderate",
+    "altitude": 15000,
+    "duration": 7,
+    "seasons": [
+      "May",
+      "Jun",
+      "Sep",
+      "Oct"
+    ],
+    "popularity": 82,
+    "providers": [
+      {
+        "name": "Indiahikes",
+        "price": 16499,
+        "rating": 4.7,
+        "groupSize": 20,
+        "startDates": [
+          "2025-05-15",
+          "2025-10-01"
+        ]
+      },
+      {
+        "name": "Trek The Himalayas",
+        "price": 14999,
+        "rating": 4.5,
+        "groupSize": 24,
+        "startDates": [
+          "2025-06-10",
+          "2025-09-25"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rupin",
+    "name": "Rupin Pass",
+    "region": "Uttarakhand",
+    "difficulty": "Difficult",
+    "altitude": 15250,
+    "duration": 7,
+    "seasons": [
+      "May",
+      "Jun",
+      "Sep"
+    ],
+    "popularity": 78,
+    "providers": [
+      {
+        "name": "Bikat Adventures",
+        "price": 18999,
+        "rating": 4.6,
+        "groupSize": 18,
+        "startDates": [
+          "2025-05-20",
+          "2025-09-05"
+        ]
+      },
+      {
+        "name": "TTH",
+        "price": 17999,
+        "rating": 4.5,
+        "groupSize": 20,
+        "startDates": [
+          "2025-06-02",
+          "2025-09-10"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vof",
+    "name": "Valley of Flowers",
+    "region": "Uttarakhand",
+    "difficulty": "Easy",
+    "altitude": 14400,
+    "duration": 6,
+    "seasons": [
+      "Jul",
+      "Aug",
+      "Sep"
+    ],
+    "popularity": 92,
+    "providers": [
+      {
+        "name": "Indiahikes",
+        "price": 12999,
+        "rating": 4.8,
+        "groupSize": 24,
+        "startDates": [
+          "2025-07-10",
+          "2025-08-05"
+        ]
+      },
+      {
+        "name": "Moxtain",
+        "price": 10999,
+        "rating": 4.4,
+        "groupSize": 18,
+        "startDates": [
+          "2025-07-15",
+          "2025-09-01"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "brahmatal",
+    "name": "Brahmatal",
+    "region": "Uttarakhand",
+    "difficulty": "Easy",
+    "altitude": 12250,
+    "duration": 6,
+    "seasons": [
+      "Dec",
+      "Jan",
+      "Feb"
+    ],
+    "popularity": 88,
+    "providers": [
+      {
+        "name": "TTH",
+        "price": 9999,
+        "rating": 4.6,
+        "groupSize": 20,
+        "startDates": [
+          "2025-12-20",
+          "2026-01-10"
+        ]
+      },
+      {
+        "name": "Moxtain",
+        "price": 9499,
+        "rating": 4.4,
+        "groupSize": 18,
+        "startDates": [
+          "2025-12-28",
+          "2026-02-02"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kuari",
+    "name": "Kuari Pass",
+    "region": "Uttarakhand",
+    "difficulty": "Moderate",
+    "altitude": 12516,
+    "duration": 6,
+    "seasons": [
+      "Apr",
+      "May",
+      "Oct",
+      "Nov"
+    ],
+    "popularity": 80,
+    "providers": [
+      {
+        "name": "Indiahikes",
+        "price": 11999,
+        "rating": 4.6,
+        "groupSize": 20,
+        "startDates": [
+          "2025-04-10",
+          "2025-11-05"
+        ]
+      },
+      {
+        "name": "Trekveda",
+        "price": 10499,
+        "rating": 4.2,
+        "groupSize": 18,
+        "startDates": [
+          "2025-10-15",
+          "2025-11-20"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hkd",
+    "name": "Har Ki Dun",
+    "region": "Uttarakhand",
+    "difficulty": "Moderate",
+    "altitude": 11675,
+    "duration": 7,
+    "seasons": [
+      "Apr",
+      "May",
+      "Oct"
+    ],
+    "popularity": 84,
+    "providers": [
+      {
+        "name": "Indiahikes",
+        "price": 13999,
+        "rating": 4.7,
+        "groupSize": 20,
+        "startDates": [
+          "2025-04-12",
+          "2025-10-10"
+        ]
+      },
+      {
+        "name": "Bikat Adventures",
+        "price": 12499,
+        "rating": 4.4,
+        "groupSize": 16,
+        "startDates": [
+          "2025-05-02",
+          "2025-10-22"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "goechala",
+    "name": "Goechala",
+    "region": "Sikkim",
+    "difficulty": "Difficult",
+    "altitude": 16200,
+    "duration": 10,
+    "seasons": [
+      "Apr",
+      "May",
+      "Sep",
+      "Oct"
+    ],
+    "popularity": 70,
+    "providers": [
+      {
+        "name": "TTH",
+        "price": 22499,
+        "rating": 4.6,
+        "groupSize": 18,
+        "startDates": [
+          "2025-04-15",
+          "2025-10-05"
+        ]
+      },
+      {
+        "name": "Bikat Adventures",
+        "price": 21999,
+        "rating": 4.5,
+        "groupSize": 16,
+        "startDates": [
+          "2025-05-12",
+          "2025-09-25"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kgl",
+    "name": "Kashmir Great Lakes",
+    "region": "J&K",
+    "difficulty": "Difficult",
+    "altitude": 13750,
+    "duration": 8,
+    "seasons": [
+      "Jul",
+      "Aug",
+      "Sep"
+    ],
+    "popularity": 93,
+    "providers": [
+      {
+        "name": "TTH",
+        "price": 18999,
+        "rating": 4.7,
+        "groupSize": 24,
+        "startDates": [
+          "2025-07-05",
+          "2025-08-10"
+        ]
+      },
+      {
+        "name": "Indiahikes",
+        "price": 20999,
+        "rating": 4.8,
+        "groupSize": 20,
+        "startDates": [
+          "2025-07-15",
+          "2025-09-01"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tarsar",
+    "name": "Tarsar Marsar",
+    "region": "J&K",
+    "difficulty": "Moderate",
+    "altitude": 13450,
+    "duration": 7,
+    "seasons": [
+      "Jul",
+      "Aug",
+      "Sep"
+    ],
+    "popularity": 85,
+    "providers": [
+      {
+        "name": "TTH",
+        "price": 17499,
+        "rating": 4.6,
+        "groupSize": 22,
+        "startDates": [
+          "2025-07-20",
+          "2025-08-18"
+        ]
+      },
+      {
+        "name": "Moxtain",
+        "price": 15999,
+        "rating": 4.4,
+        "groupSize": 18,
+        "startDates": [
+          "2025-07-28",
+          "2025-09-02"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pinparvati",
+    "name": "Pin Parvati Pass",
+    "region": "Himachal Pradesh",
+    "difficulty": "Expert",
+    "altitude": 17750,
+    "duration": 11,
+    "seasons": [
+      "Jul",
+      "Aug",
+      "Sep"
+    ],
+    "popularity": 60,
+    "providers": [
+      {
+        "name": "Bikat Adventures",
+        "price": 36999,
+        "rating": 4.7,
+        "groupSize": 12,
+        "startDates": [
+          "2025-07-12",
+          "2025-08-05"
+        ]
+      },
+      {
+        "name": "Adventure Pulse",
+        "price": 34999,
+        "rating": 4.5,
+        "groupSize": 10,
+        "startDates": [
+          "2025-07-25",
+          "2025-09-01"
+        ]
+      }
+    ]
+  }
+]
