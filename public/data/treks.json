@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Kedarkantha",
+    "season": "Winter",
+    "difficulty": "Easy",
+    "duration": "6 Days",
+    "altitude": "12,500 ft",
+    "image": "/images/kedarkantha.jpg",
+    "providers": [
+      { "name": "IndiaHikes", "price": 9500, "link": "#" },
+      { "name": "Trek The Himalayas", "price": 8900, "link": "#" },
+      { "name": "Himalaya Eco Treks", "price": 9200, "link": "#" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Hampta Pass",
+    "season": "Summer",
+    "difficulty": "Moderate",
+    "duration": "7 Days",
+    "altitude": "14,100 ft",
+    "image": "/images/hampta.jpg",
+    "providers": [
+      { "name": "IndiaHikes", "price": 10500, "link": "#" },
+      { "name": "Bikat Adventures", "price": 9800, "link": "#" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Everest Base Camp",
+    "season": "Autumn",
+    "difficulty": "Difficult",
+    "duration": "14 Days",
+    "altitude": "17,600 ft",
+    "image": "/images/ebc.jpg",
+    "providers": [
+      { "name": "Nepal Eco Trek", "price": 65000, "link": "#" },
+      { "name": "Trek Nepal", "price": 70000, "link": "#" }
+    ]
+  }
+]

@@ -1,165 +1,198 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+type Provider = {
+  name: string;
+  price: number;
+  link: string;
+};
 
 type Trek = {
   id: number;
   name: string;
-  location: string;
-  altitude: string;
+  season: "Winter" | "Summer" | "Monsoon" | "Autumn";
   difficulty: "Easy" | "Moderate" | "Difficult";
   duration: string;
-  price: string;
+  altitude: string;
   image: string;
+  providers: Provider[];
 };
 
-const treks: Trek[] = [
-  {
-    id: 1,
-    name: "Kedarkantha Trek",
-    location: "Uttarakhand",
-    altitude: "12,500 ft",
-    difficulty: "Easy",
-    duration: "6 Days",
-    price: "₹6,500",
-    image: "/gallery/kedarkantha.jpg",
-  },
-  {
-    id: 2,
-    name: "Hampta Pass Trek",
-    location: "Himachal Pradesh",
-    altitude: "14,100 ft",
-    difficulty: "Moderate",
-    duration: "5 Days",
-    price: "₹7,500",
-    image: "/gallery/hampta.jpg",
-  },
-  {
-    id: 3,
-    name: "Valley of Flowers",
-    location: "Uttarakhand",
-    altitude: "12,000 ft",
-    difficulty: "Easy",
-    duration: "6 Days",
-    price: "₹6,800",
-    image: "/gallery/valley.jpg",
-  },
-  {
-    id: 4,
-    name: "Brahmatal Trek",
-    location: "Uttarakhand",
-    altitude: "12,250 ft",
-    difficulty: "Moderate",
-    duration: "6 Days",
-    price: "₹8,000",
-    image: "/gallery/brahmatal.jpg",
-  },
-];
-
 export default function TreksPage() {
-  const [filters, setFilters] = useState({
-    difficulty: "All",
-    duration: "All",
-    location: "All",
-  });
+  const [treks, setTreks] = useState<Trek[]>([]);
+  const [selectedTrek, setSelectedTrek] = useState("");
+  const [selectedSeason, setSelectedSeason] = useState("");
+  const [selectedDifficulty, setSelectedDifficulty] = useState("");
+  const [expandedTrek, setExpandedTrek] = useState<number | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setFilters({ ...filters, [e.target.name]: e.target.value });
-  };
+  useEffect(() => {
+    fetch("/data/treks.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setTreks(data as Trek[]);
+        setLoading(false);
+      });
+  }, []);
 
   const filteredTreks = treks.filter((trek) => {
     return (
-      (filters.difficulty === "All" || trek.difficulty === filters.difficulty) &&
-      (filters.duration === "All" || trek.duration === filters.duration) &&
-      (filters.location === "All" || trek.location === filters.location)
+      (selectedTrek ? trek.name === selectedTrek : true) &&
+      (selectedSeason ? trek.season === selectedSeason : true) &&
+      (selectedDifficulty ? trek.difficulty === selectedDifficulty : true)
     );
   });
 
   return (
-    <main className="max-w-6xl mx-auto px-6 py-24">
-      <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">
-        Explore Treks 🏔️
-      </h1>
-
+    <div className="min-h-screen bg-gray-50">
       {/* Filters */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
-        {/* Difficulty */}
-        <select
-          name="difficulty"
-          value={filters.difficulty}
-          onChange={handleChange}
-          className="px-4 py-2 rounded-lg border border-gray-300 bg-white shadow-sm text-gray-700 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition cursor-pointer"
-        >
-          <option value="All">All Difficulties</option>
-          <option value="Easy">Easy</option>
-          <option value="Moderate">Moderate</option>
-          <option value="Difficult">Difficult</option>
-        </select>
-
-        {/* Duration */}
-        <select
-          name="duration"
-          value={filters.duration}
-          onChange={handleChange}
-          className="px-4 py-2 rounded-lg border border-gray-300 bg-white shadow-sm text-gray-700 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition cursor-pointer"
-        >
-          <option value="All">All Durations</option>
-          {[...new Set(treks.map((t) => t.duration))].map((d) => (
-            <option key={d} value={d}>
-              {d}
-            </option>
-          ))}
-        </select>
-
-        {/* Location */}
-        <select
-          name="location"
-          value={filters.location}
-          onChange={handleChange}
-          className="px-4 py-2 rounded-lg border border-gray-300 bg-white shadow-sm text-gray-700 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition cursor-pointer"
-        >
-          <option value="All">All Regions</option>
-          {[...new Set(treks.map((t) => t.location))].map((loc) => (
-            <option key={loc} value={loc}>
-              {loc}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {/* Trek Cards */}
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {filteredTreks.map((trek) => (
-          <div
-            key={trek.id}
-            className="bg-white border rounded-xl shadow-sm hover:shadow-md transition overflow-hidden"
+      <div className="bg-blue-900 py-8 text-white flex flex-col items-center">
+        <h1 className="text-3xl font-bold mb-6">Compare Himalayan Treks</h1>
+        <div className="bg-white text-gray-900 rounded-2xl shadow-lg flex flex-wrap gap-4 p-4 w-full max-w-5xl items-center">
+          {/* Trek Filter */}
+          <select
+            value={selectedTrek}
+            onChange={(e) => setSelectedTrek(e.target.value)}
+            className="flex-1 px-3 py-2 border rounded-lg"
           >
-            <img
-              src={trek.image}
-              alt={trek.name}
-              className="w-full h-48 object-cover"
-              onError={(e) =>
-                ((e.target as HTMLImageElement).src =
-                  "https://via.placeholder.com/400x300?text=" +
-                  trek.name.replace(" ", "+"))
-              }
-            />
-            <div className="p-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-2">
+            <option value="">All Treks</option>
+            {treks.map((trek) => (
+              <option key={trek.id} value={trek.name}>
                 {trek.name}
-              </h2>
-              <p className="text-sm text-gray-600">{trek.location}</p>
-              <p className="text-sm text-gray-500 mt-1">
-                Altitude: {trek.altitude}
-              </p>
-              <p className="text-sm text-gray-500">Duration: {trek.duration}</p>
-              <p className="text-sm font-semibold text-yellow-600 mt-2">
-                {trek.difficulty} · {trek.price}
-              </p>
-            </div>
-          </div>
-        ))}
+              </option>
+            ))}
+          </select>
+
+          {/* Season Filter */}
+          <select
+            value={selectedSeason}
+            onChange={(e) => setSelectedSeason(e.target.value)}
+            className="flex-1 px-3 py-2 border rounded-lg"
+          >
+            <option value="">All Seasons</option>
+            <option value="Winter">Winter</option>
+            <option value="Summer">Summer</option>
+            <option value="Monsoon">Monsoon</option>
+            <option value="Autumn">Autumn</option>
+          </select>
+
+          {/* Difficulty Filter */}
+          <select
+            value={selectedDifficulty}
+            onChange={(e) => setSelectedDifficulty(e.target.value)}
+            className="flex-1 px-3 py-2 border rounded-lg"
+          >
+            <option value="">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Difficult">Difficult</option>
+          </select>
+        </div>
       </div>
-    </main>
+
+      {/* Results */}
+      <div className="max-w-5xl mx-auto px-6 py-10 space-y-6">
+        {loading ? (
+          <p className="text-center text-gray-500">Loading treks...</p>
+        ) : filteredTreks.length === 0 ? (
+          <p className="text-center text-gray-500">No treks found.</p>
+        ) : (
+          filteredTreks.map((trek) => (
+            <div
+              key={trek.id}
+              className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition"
+            >
+              {/* Trek Header */}
+              <div
+                onClick={() =>
+                  setExpandedTrek(expandedTrek === trek.id ? null : trek.id)
+                }
+                className="flex items-center cursor-pointer p-5"
+              >
+                {/* Trek Image */}
+                <img
+                  src={trek.image}
+                  alt={trek.name}
+                  className="w-40 h-28 object-cover rounded-xl border"
+                />
+
+                {/* Trek Info */}
+                <div className="ml-6 flex-1">
+                  <h2 className="text-2xl font-bold text-gray-800">
+                    {trek.name}
+                  </h2>
+                  <p className="text-gray-600 mt-1">
+                    {trek.duration} • {trek.altitude}
+                  </p>
+
+                  {/* Badges */}
+                  <div className="flex gap-3 mt-2">
+                    <span
+                      className={`px-3 py-1 text-xs font-semibold rounded-full ${
+                        trek.difficulty === "Easy"
+                          ? "bg-green-100 text-green-700"
+                          : trek.difficulty === "Moderate"
+                          ? "bg-yellow-100 text-yellow-700"
+                          : "bg-red-100 text-red-700"
+                      }`}
+                    >
+                      {trek.difficulty}
+                    </span>
+                    <span
+                      className={`px-3 py-1 text-xs font-semibold rounded-full ${
+                        trek.season === "Winter"
+                          ? "bg-blue-100 text-blue-700"
+                          : trek.season === "Summer"
+                          ? "bg-orange-100 text-orange-700"
+                          : trek.season === "Monsoon"
+                          ? "bg-teal-100 text-teal-700"
+                          : "bg-purple-100 text-purple-700"
+                      }`}
+                    >
+                      {trek.season}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Toggle Button */}
+                <button className="text-blue-600 font-semibold hover:underline">
+                  {expandedTrek === trek.id
+                    ? "▲ Hide Providers"
+                    : "▼ View Providers"}
+                </button>
+              </div>
+
+              {/* Providers */}
+              {expandedTrek === trek.id && (
+                <div className="border-t divide-y bg-gray-50">
+                  {trek.providers.map((provider, idx) => (
+                    <div
+                      key={idx}
+                      className="flex justify-between items-center px-6 py-4 hover:bg-white transition"
+                    >
+                      <p className="font-medium text-gray-800">
+                        {provider.name}
+                      </p>
+                      <div className="flex items-center gap-4">
+                        <p className="text-lg font-bold text-blue-700">
+                          ₹{provider.price}
+                        </p>
+                        <a
+                          href={provider.link}
+                          className="px-5 py-2 bg-yellow-500 hover:bg-yellow-600 rounded-lg text-black font-semibold transition"
+                        >
+                          Book
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))
+        )}
+      </div>
+    </div>
   );
 }
