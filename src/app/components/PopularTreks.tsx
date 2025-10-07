@@ -14,13 +14,23 @@ export default function PopularTreks() {
         {/* Left column */}
         <div className="space-y-6">
           <div className="p-6 border rounded-2xl shadow-sm">
+            <img
+              src="/popularTreksImage/image1.jpeg"
+              alt="Everest Base Camp"
+              className="w-full h-32 object-cover rounded-lg mb-4"
+            />
             <h3 className="font-semibold">Everest Base Camp</h3>
             <p className="text-gray-500 mt-2">
               A breathtaking journey through diverse landscapes.
             </p>
           </div>
           <div className="p-6 border rounded-2xl shadow-sm">
-            <p className="text-gray-500">Nepal</p>
+                        <img
+              src="/popularTreksImage/image2.jpeg"
+              alt="Uttrakhand"
+              className="w-full h-32 object-cover rounded-lg mb-4"
+            />
+            <p className="text-gray-500">Uttrakhand</p>
             <h3 className="font-semibold mt-2">
               Experience local culture.
             </h3>
@@ -64,7 +74,7 @@ export default function PopularTreks() {
             </p>
           </div>
           <div className="p-6 border rounded-2xl shadow-sm">
-            <h3 className="font-semibold">Nepal</h3>
+            <h3 className="font-semibold">Himachal Pradesh</h3>
             <p className="text-gray-500 mt-2">
               Access to exclusive discounts.
             </p>

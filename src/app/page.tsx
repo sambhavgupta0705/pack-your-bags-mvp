@@ -124,7 +124,7 @@ export default function HomePage() {
       <PopularTreks/>
       <GalleryBanner/>
 <NewsletterCTA/>
-<Partners/>
+{/* <Partners/> */}
 <Footer/>
     </div>
   );

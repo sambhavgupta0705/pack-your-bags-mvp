@@ -4,16 +4,19 @@ export default function HowItWorks() {
       step: "1",
       title: "Step 1: Browse Treks",
       description: "Explore our curated list of Himalayan treks.",
+      image: "/howItWorksImage/image3.jpeg",
     },
     {
       step: "2",
       title: "Step 2: Compare Providers",
       description: "Evaluate pricing, reviews, and trek difficulty easily.",
+      image: "/howItWorksImage/image2.jpeg",
     },
     {
       step: "3",
       title: "Step 3: Book Your Adventure",
       description: "Secure your spot and get ready for an unforgettable journey.",
+      image: "/howItWorksImage/image1.jpeg",
     },
   ];
 
@@ -37,9 +40,13 @@ export default function HowItWorks() {
               {item.step}
             </span>
 
-            {/* Placeholder image box */}
-            <div className="flex items-center justify-center bg-gray-50 border rounded-xl h-32 mb-6">
-              <span className="text-gray-400">🖼️</span>
+            {/* Image */}
+            <div className="flex items-center justify-center bg-gray-50 border rounded-xl h-32 mb-6 overflow-hidden">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="h-full w-full object-cover rounded-xl"
+              />
             </div>
 
             {/* Content */}
