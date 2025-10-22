@@ -62,7 +62,7 @@ export default function PopularTreks() {
             </p>
           </div>
           <div className="p-6 border rounded-2xl shadow-sm">
-            <h3 className="font-semibold">$1,200</h3>
+            <h3 className="font-semibold">Rs7,200</h3>
             <p className="text-gray-500 mt-2">
               Expert guides to enhance your experience.
             </p>

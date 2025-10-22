@@ -47,11 +47,6 @@ export default function WhyChooseUs() {
             >
               Start comparing now! →
             </a>
-
-            {/* Image placeholder */}
-            <div className="flex-1 flex items-center justify-center bg-gray-50 border rounded-xl h-40 mt-6">
-              <span className="text-gray-400 text-lg">🖼️</span>
-            </div>
           </div>
         ))}
       </div>
